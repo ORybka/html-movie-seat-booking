@@ -1,0 +1,137 @@
+/****** BASE RESET ******/
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
+}
+
+ol,
+li {
+  list-style-type: none;
+}
+
+/****** FONTS ******/
+html {
+  font-family: Nunito, Verdana, cursive;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 500px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to right, transparent, 40%, #000), url(/assets/posters/background.jpg);
+  background-size: cover;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: row;
+  width: 60rem;
+  height: 40rem;
+  background-color: #00000060;
+  border: 0.2rem solid #0fac97;
+}
+
+.film-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 35%;
+  height: 100%;
+  padding: 0 0 5rem 2rem;
+  background-image: url(/assets/posters/poster.jpeg);
+  background-size: cover;
+  background-position: 50% 25%;
+  color: #fff;
+  line-height: 2rem;
+
+  .film-title {
+    position: absolute;
+    margin-top: 2rem;
+  }
+
+  .film-address {
+    margin-bottom: 2rem;
+  }
+}
+
+.car-selection-container {
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+  height: 100%;
+}
+
+.breadcrumbs {
+  color: #fff;
+}
+
+.menu {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 3rem;
+}
+
+.menu-item {
+  padding-bottom: 0.5rem;
+  border-bottom: 0.2rem solid #0fac9700;
+
+  &:hover {
+    padding-bottom: 0.5rem;
+    color: #0fac97;
+    border-bottom: 0.2rem solid #0fac97;
+    transition: border-bottom 0.5s;
+  }
+}
+
+.active-menu-item {
+  padding-bottom: 0.5rem;
+  color: #0fac97;
+  border-bottom: 0.2rem solid #0fac97;
+}
+
+.car {
+  appearance: none;
+  background-image: url(/assets/cars/jeep.png);
+  background-size: cover;
+  height: 4rem;
+  width: 4rem;
+
+  &:hover {
+    background-color: #0fac97;
+  }
+}
