@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/main.css">
   <title>Drive-In Cinema</title>
 </head>
@@ -11,11 +13,24 @@
   <main class="main-container">
     <section class="film-description">
       <div class="film-information">
-        <h3 class="film-title">The Dark Knight</h3>
-        <address class="film-address">Kyiv</address>
+        <h2 class="film-title">The Dark Knight</h2>
+        <address class="film-address"> 
+          <img class="icon" src="/assets/icons/location.png" alt="credit-card" >
+          <span class="film-item">Kyiv</span>
+        </address>
         <div class="row">
-          <span class="film-date">6 February,</span>
-          <span class="film-time">6:00 PM</span>
+          <div class="row film-date">
+            <img class="icon" src="/assets/icons/event.png" alt="credit-card" >
+            <span class="film-item">6 February</span>
+          </div>
+          <div class="row film-time">
+            <img class="icon" src="/assets/icons/time.png" alt="credit-card" >
+            <time class="film-item" datetime="2021-02-06 18:00">18:00</time>
+          </div>
+        </div>
+        <div class="row ticket-price">
+          <img class="icon" src="/assets/icons/credit-card.png" alt="credit-card" >
+          <span class="film-item">200 UAH</span>
         </div>
       </div>
     </section>

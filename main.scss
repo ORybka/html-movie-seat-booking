@@ -1,4 +1,3 @@
-/****** BASE RESET ******/
 *,
 *::before,
 *::after {
@@ -31,6 +30,10 @@ li {
   list-style-type: none;
 }
 
+address {
+  font-style: normal;
+}
+
 $colors: (
   green: #0fac97,
 );
@@ -39,9 +42,8 @@ $colors: (
   @return map-get($colors, $colors-name);
 }
 
-/****** FONTS ******/
 html {
-  font-family: Nunito, Verdana, cursive;
+  font-family: 'Yusei Magic', sans-serif;
   font-size: 16px;
 }
 
@@ -92,15 +94,52 @@ body {
   background-position: 50% 25%;
   color: #fff;
   line-height: 2rem;
+}
 
-  .film-title {
-    position: absolute;
-    margin-top: 2rem;
+.film-title {
+  position: absolute;
+  margin-top: 2.5rem;
+  font-size: 2rem;
+}
+
+.film-date,
+.film-time,
+.ticket-price {
+  align-items: center;
+  justify-content: flex-start;
+  height: 1rem;
+  font-size: 1.2rem;
+}
+
+.film-item {
+  margin-left: 0.3rem;
+}
+
+.icon {
+  height: 1.5rem;
+  width: auto;
+}
+
+.film-address {
+  margin-bottom: 6rem;
+  font-size: 1rem;
+
+  .film-item {
+    margin-left: 0;
   }
 
-  .film-address {
-    margin-bottom: 2rem;
+  .icon {
+    height: 1rem;
+    width: auto;
   }
+}
+
+.film-date {
+  margin-right: 1.5rem;
+}
+
+.ticket-price {
+  margin-top: 1.5rem;
 }
 
 .car-selection-container {
