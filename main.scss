@@ -323,4 +323,9 @@ input:disabled:hover {
   text-align: center;
   color: #fff;
   background-color: color(green);
+
+  &:hover {
+    background-color: #00ffdd;
+    color: #000;
+  }
 }

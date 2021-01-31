@@ -381,4 +381,9 @@ input:disabled:hover {
   color: #fff;
   background-color: #0fac97;
 }
+
+.confirm-button:hover {
+  background-color: #00ffdd;
+  color: #000;
+}
 /*# sourceMappingURL=main.css.map */
