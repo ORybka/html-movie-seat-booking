@@ -58,9 +58,29 @@ body {
       -ms-flex-align: center;
           align-items: center;
   height: 100vh;
-  background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(40%), to(#000)), url(/assets/posters/background.jpg);
-  background: linear-gradient(to right, transparent, 40%, #000), url(/assets/posters/background.jpg);
+  background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(30%), to(#000)), url(/assets/posters/background.jpg);
+  background: linear-gradient(to right, transparent, 30%, #000), url(/assets/posters/background.jpg);
   background-size: cover;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .main-container {
@@ -73,8 +93,9 @@ body {
           flex-direction: row;
   width: 60rem;
   height: 40rem;
-  background-color: #00000060;
-  border: 0.2rem solid #0fac97;
+  background-color: #00000090;
+  -webkit-box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
+          box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
 }
 
 .film-description {
@@ -143,7 +164,7 @@ body {
 
 .menu-item {
   padding-bottom: 0.5rem;
-  border-bottom: 0.2rem solid #0fac9700;
+  border-bottom: 0.2rem solid #000;
 }
 
 .menu-item:hover {
@@ -160,17 +181,204 @@ body {
   border-bottom: 0.2rem solid #0fac97;
 }
 
-.car {
+.legend-container {
+  position: relative;
+  margin: 2rem 0 1rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 105%;
+  color: #fff;
+}
+
+.legend-container:after {
+  content: '';
+  position: absolute;
+  top: 180%;
+  right: 28%;
+  width: 50%;
+  height: 0.2rem;
+  background-color: #0fac97;
+  opacity: 0.5;
+}
+
+.legend-item {
+  position: relative;
+  margin: 0 2rem 0;
+}
+
+.legend-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -2rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-size: 90%;
+  background-repeat: no-repeat;
+  background-position: 50% 30%;
+}
+
+.item-unavailable::before {
+  background-image: url(/assets/cars/unavailable.png);
+}
+
+.item-selected::before {
+  background-image: url(/assets/cars/selected.png);
+}
+
+.item-sedan::before {
+  background-image: url(/assets/cars/sedan.png);
+}
+
+.item-jeep::before {
+  background-image: url(/assets/cars/jeep.png);
+}
+
+.screen-container {
+  position: relative;
+  margin: 2rem 0 3rem;
+}
+
+.screen-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 35%;
+  width: 12rem;
+  height: 4rem;
+  background-image: url(/assets/posters/background1.jpg);
+  background-size: cover;
+  background-position: 25% 50%;
+  -webkit-box-shadow: rgba(255, 255, 255, 0.25) 0px 20px 22px, rgba(255, 255, 255, 0.12) 0px -12px 30px, rgba(255, 255, 255, 0.12) 0px 4px 6px, rgba(255, 255, 255, 0.17) 0px 12px 13px, rgba(255, 255, 255, 0.09) 0px -3px 5px;
+          box-shadow: rgba(255, 255, 255, 0.25) 0px 20px 22px, rgba(255, 255, 255, 0.12) 0px -12px 30px, rgba(255, 255, 255, 0.12) 0px 4px 6px, rgba(255, 255, 255, 0.17) 0px 12px 13px, rgba(255, 255, 255, 0.09) 0px -3px 5px;
+}
+
+.cars-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 22rem;
+  width: 30rem;
+  margin: 2rem auto 0;
+}
+
+.first-row {
+  height: 2.5rem;
+  width: 50%;
+}
+
+.first-row .car-sedan {
+  background-size: 50%;
+}
+
+.second-row {
+  height: 3.5rem;
+  width: 60%;
+}
+
+.second-row .car-sedan {
+  background-size: 60%;
+}
+
+.third-row {
+  height: 4.5rem;
+  width: 70%;
+}
+
+.third-row .car-sedan {
+  background-size: 70%;
+}
+
+.forth-row {
+  height: 5rem;
+  width: 80%;
+}
+
+.forth-row .car-sedan {
+  background-size: 80%;
+}
+
+.fifth-row {
+  height: 6rem;
+  width: 90%;
+}
+
+.fifth-row .car-jeep {
+  background-size: 90%;
+}
+
+.car-sedan {
+  background-image: url(/assets/cars/sedan.png);
+  height: 90%;
+  width: 6rem;
+}
+
+.car-sedan.unavailable {
+  background-image: url(/assets/cars/sedan-unavailable.png);
+}
+
+.car-jeep {
+  background-image: url(/assets/cars/jeep.png);
+  height: 100%;
+  width: 7rem;
+}
+
+.car-jeep.unavailable {
+  background-image: url(/assets/cars/jeep-unavailable.png);
+}
+
+.car-jeep,
+.car-sedan {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  background-image: url(/assets/cars/jeep.png);
-  background-size: cover;
-  height: 4rem;
-  width: 4rem;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  border-radius: 10%;
+  border: 0.1rem solid transparent;
+  cursor: pointer;
 }
 
-.car:hover {
+.car-jeep:hover,
+.car-sedan:hover {
+  border: 0.1rem solid #808080;
+  outline: 0;
+}
+
+.car-jeep:checked,
+.car-sedan:checked {
+  background-color: #0fac97;
+  border: 0.1rem solid #808080;
+  outline: 0;
+}
+
+.car-jeep:focus,
+.car-sedan:focus {
+  border: 0.1rem solid #808080;
+  outline: 0;
+}
+
+input:disabled:hover {
+  background-color: transparent;
+  cursor: not-allowed;
+}
+
+.button-container {
+  width: 100%;
+}
+
+.confirm-button {
+  display: block;
+  height: 2rem;
+  width: 10rem;
+  margin: 0.5rem auto 0;
+  padding-top: 0.3rem;
+  text-align: center;
+  color: #fff;
   background-color: #0fac97;
 }
 /*# sourceMappingURL=main.css.map */

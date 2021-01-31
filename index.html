@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/main.css">
-  <title>Cinema</title>
+  <title>Drive-In Cinema</title>
 </head>
 <body>
 
@@ -14,7 +14,7 @@
         <h3 class="film-title">The Dark Knight</h3>
         <address class="film-address">Kyiv</address>
         <div class="row">
-          <span class="film-date">6 February, </span>
+          <span class="film-date">6 February,</span>
           <span class="film-time">6:00 PM</span>
         </div>
       </div>
@@ -29,25 +29,53 @@
         </ol>
       </nav>
 
-      <div class="cars-selection">
-        <div class="legend-container"></div>
+      <div class="col cars-selection">
+        <div class="row legend-container">
+          <span class="legend-item item-unavailable">unavailable</span>
+          <span class="legend-item item-selected">selected</span>
+          <span class="legend-item item-sedan">sedan only</span>
+          <span class="legend-item item-jeep">jeep only</span>
+        </div>
         <div class="screen-container"></div>
-        <div class="cars-container">
-          <input type="checkbox" class="car">
-          <input type="checkbox" class="car">
-          <input type="checkbox" class="car">
-          <input type="checkbox" class="car">
-          <input type="checkbox" class="car">
-          <input type="checkbox" class="car">
-          <input type="checkbox" class="car">
-          <input type="checkbox" class="car">
-          <input type="checkbox" class="car">
-          <input type="checkbox" class="car">
-          <input type="checkbox" class="car">
-          <input type="checkbox" class="car">
-          <input type="checkbox" class="car">
-          <input type="checkbox" class="car">
-          <input type="checkbox" class="car">
+        <div class="col cars-container">
+          <div class="row cars-row first-row">
+            <input type="checkbox" class="car-sedan unavailable" disabled>
+            <input type="checkbox" class="car-sedan">
+            <input type="checkbox" class="car-sedan">
+            <input type="checkbox" class="car-sedan unavailable" disabled>
+            <input type="checkbox" class="car-sedan">
+          </div>
+          <div class="row cars-row second-row">
+            <input type="checkbox" class="car-sedan">
+            <input type="checkbox" class="car-sedan">
+            <input type="checkbox" class="car-sedan unavailable" disabled>
+            <input type="checkbox" class="car-sedan unavailable" disabled>
+            <input type="checkbox" class="car-sedan">
+          </div>
+          <div class="row cars-row third-row">
+            <input type="checkbox" class="car-sedan">
+            <input type="checkbox" class="car-sedan">
+            <input type="checkbox" class="car-sedan">
+            <input type="checkbox" class="car-sedan">
+            <input type="checkbox" class="car-sedan">
+          </div>
+          <div class="row cars-row forth-row">
+            <input type="checkbox" class="car-sedan">
+            <input type="checkbox" class="car-sedan">
+            <input type="checkbox" class="car-sedan">
+            <input type="checkbox" class="car-sedan">
+            <input type="checkbox" class="car-sedan">
+          </div>
+          <div class="row cars-row fifth-row">
+            <input type="checkbox" class="car-jeep">
+            <input type="checkbox" class="car-jeep">
+            <input type="checkbox" class="car-jeep">
+            <input type="checkbox" class="car-jeep unavailable" disabled>
+            <input type="checkbox" class="car-jeep unavailable" disabled>
+          </div>
+        </div>
+        <div class="button-container">
+          <a href="/" class="confirm-button">Confirm</a>
         </div>
       </div>
     </section>

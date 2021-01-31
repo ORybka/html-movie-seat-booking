@@ -31,6 +31,14 @@ li {
   list-style-type: none;
 }
 
+$colors: (
+  green: #0fac97,
+);
+
+@function color($colors-name) {
+  @return map-get($colors, $colors-name);
+}
+
 /****** FONTS ******/
 html {
   font-family: Nunito, Verdana, cursive;
@@ -49,8 +57,18 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: linear-gradient(to right, transparent, 40%, #000), url(/assets/posters/background.jpg);
+  background: linear-gradient(to right, transparent, 30%, #000), url(/assets/posters/background.jpg);
   background-size: cover;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
 }
 
 .main-container {
@@ -58,8 +76,8 @@ body {
   flex-direction: row;
   width: 60rem;
   height: 40rem;
-  background-color: #00000060;
-  border: 0.2rem solid #0fac97;
+  background-color: #00000090;
+  box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
 }
 
 .film-description {
@@ -108,30 +126,201 @@ body {
 
 .menu-item {
   padding-bottom: 0.5rem;
-  border-bottom: 0.2rem solid #0fac9700;
+  border-bottom: 0.2rem solid #000;
 
   &:hover {
     padding-bottom: 0.5rem;
-    color: #0fac97;
-    border-bottom: 0.2rem solid #0fac97;
+    color: color(green);
+    border-bottom: 0.2rem solid color(green);
     transition: border-bottom 0.5s;
   }
 }
 
 .active-menu-item {
   padding-bottom: 0.5rem;
-  color: #0fac97;
-  border-bottom: 0.2rem solid #0fac97;
+  color: color(green);
+  border-bottom: 0.2rem solid color(green);
 }
 
-.car {
-  appearance: none;
+.legend-container {
+  position: relative;
+  margin: 2rem 0 1rem;
+  justify-content: center;
+  width: 105%;
+  color: #fff;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 180%;
+    right: 28%;
+    width: 50%;
+    height: 0.2rem;
+    background-color: color(green);
+    opacity: 0.5;
+  }
+}
+
+.legend-item {
+  position: relative;
+  margin: 0 2rem 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -2rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-position: 50% 30%;
+  }
+}
+
+@mixin setSVGButton($items) {
+  @each $item in $items {
+    .item-#{$item}::before {
+      background-image: url(/assets/cars/#{$item}.png);
+    }
+  }
+}
+
+@include setSVGButton(('unavailable', 'selected', 'sedan', 'jeep'));
+
+.screen-container {
+  position: relative;
+  margin: 2rem 0 3rem;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 35%;
+    width: 12rem;
+    height: 4rem;
+    background-image: url(/assets/posters/background1.jpg);
+    background-size: cover;
+    background-position: 25% 50%;
+    box-shadow: rgba(255, 255, 255, 0.25) 0px 20px 22px, rgba(255, 255, 255, 0.12) 0px -12px 30px, rgba(255, 255, 255, 0.12) 0px 4px 6px, rgba(255, 255, 255, 0.17) 0px 12px 13px, rgba(255, 255, 255, 0.09) 0px -3px 5px;
+  }
+}
+
+.cars-container {
+  display: flex;
+  align-items: center;
+  height: 22rem;
+  width: 30rem;
+  margin: 2rem auto 0;
+}
+
+.first-row {
+  height: 2.5rem;
+  width: 50%;
+
+  .car-sedan {
+    background-size: 50%;
+  }
+}
+
+.second-row {
+  height: 3.5rem;
+  width: 60%;
+
+  .car-sedan {
+    background-size: 60%;
+  }
+}
+
+.third-row {
+  height: 4.5rem;
+  width: 70%;
+
+  .car-sedan {
+    background-size: 70%;
+  }
+}
+
+.forth-row {
+  height: 5rem;
+  width: 80%;
+
+  .car-sedan {
+    background-size: 80%;
+  }
+}
+
+.fifth-row {
+  height: 6rem;
+  width: 90%;
+
+  .car-jeep {
+    background-size: 90%;
+  }
+}
+
+.car-sedan {
+  background-image: url(/assets/cars/sedan.png);
+  height: 90%;
+  width: 6rem;
+
+  &.unavailable {
+    background-image: url(/assets/cars/sedan-unavailable.png);
+  }
+}
+
+.car-jeep {
   background-image: url(/assets/cars/jeep.png);
-  background-size: cover;
-  height: 4rem;
-  width: 4rem;
+  height: 100%;
+  width: 7rem;
+
+  &.unavailable {
+    background-image: url(/assets/cars/jeep-unavailable.png);
+  }
+}
+
+.car-jeep,
+.car-sedan {
+  appearance: none;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  border-radius: 10%;
+  border: 0.1rem solid transparent;
+  cursor: pointer;
 
   &:hover {
-    background-color: #0fac97;
+    border: 0.1rem solid #808080;
+    outline: 0;
   }
+
+  &:checked {
+    background-color: color(green);
+    border: 0.1rem solid #808080;
+    outline: 0;
+  }
+
+  &:focus {
+    border: 0.1rem solid #808080;
+    outline: 0;
+  }
+}
+
+input:disabled:hover {
+  background-color: transparent;
+  cursor: not-allowed;
+}
+
+.button-container {
+  width: 100%;
+}
+
+.confirm-button {
+  display: block;
+  height: 2rem;
+  width: 10rem;
+  margin: 0.5rem auto 0;
+  padding-top: 0.3rem;
+  text-align: center;
+  color: #fff;
+  background-color: color(green);
 }
