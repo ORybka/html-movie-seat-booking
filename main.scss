@@ -59,7 +59,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: linear-gradient(to right, transparent, 30%, #000), url(/assets/posters/background.jpg);
+  background: linear-gradient(to right, transparent, 30%, #000), url(assets/posters/background.jpg);
   background-size: cover;
 }
 
@@ -89,7 +89,7 @@ body {
   width: 35%;
   height: 100%;
   padding: 0 0 5rem 2rem;
-  background-image: url(/assets/posters/poster.jpeg);
+  background-image: url(assets/posters/poster.jpeg);
   background-size: cover;
   background-position: 50% 25%;
   color: #fff;
@@ -220,7 +220,7 @@ body {
 @mixin setSVGButton($items) {
   @each $item in $items {
     .item-#{$item}::before {
-      background-image: url(/assets/cars/#{$item}.png);
+      background-image: url(assets/cars/#{$item}.png);
     }
   }
 }
@@ -238,7 +238,7 @@ body {
     right: 35%;
     width: 12rem;
     height: 4rem;
-    background-image: url(/assets/posters/background1.jpg);
+    background-image: url(assets/posters/background1.jpg);
     background-size: cover;
     background-position: 25% 50%;
     box-shadow: rgba(255, 255, 255, 0.25) 0px 20px 22px, rgba(255, 255, 255, 0.12) 0px -12px 30px, rgba(255, 255, 255, 0.12) 0px 4px 6px, rgba(255, 255, 255, 0.17) 0px 12px 13px, rgba(255, 255, 255, 0.09) 0px -3px 5px;
@@ -299,22 +299,22 @@ body {
 }
 
 .car-sedan {
-  background-image: url(/assets/cars/sedan.png);
+  background-image: url(assets/cars/sedan.png);
   height: 90%;
   width: 6rem;
 
   &.unavailable {
-    background-image: url(/assets/cars/sedan-unavailable.png);
+    background-image: url(assets/cars/sedan-unavailable.png);
   }
 }
 
 .car-jeep {
-  background-image: url(/assets/cars/jeep.png);
+  background-image: url(assets/cars/jeep.png);
   height: 100%;
   width: 7rem;
 
   &.unavailable {
-    background-image: url(/assets/cars/jeep-unavailable.png);
+    background-image: url(assets/cars/jeep-unavailable.png);
   }
 }
 
