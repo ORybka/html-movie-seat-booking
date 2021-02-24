@@ -21,8 +21,6 @@ h6 {
 
 a {
   text-decoration: none;
-  text-transform: uppercase;
-  color: #000;
 }
 
 ol,
@@ -181,9 +179,10 @@ body {
 .menu-item {
   padding-bottom: 0.5rem;
   border-bottom: 0.2rem solid transparent;
+  color: #fff;
 }
 
-.previous-menu-item:hover {
+.menu-item:hover {
   padding-bottom: 0.5rem;
   color: #0fac97;
   border-bottom: 0.2rem solid #0fac97;
@@ -195,6 +194,11 @@ body {
   padding-bottom: 0.5rem;
   color: #0fac97;
   border-bottom: 0.2rem solid #0fac97;
+  pointer-events: none;
+}
+
+.next-menu-item {
+  pointer-events: none;
 }
 
 .film-description {
@@ -568,9 +572,10 @@ input:disabled:hover {
   background-color: #0fac97;
   outline: solid transparent;
   border: 1px solid transparent;
+  cursor: pointer;
 }
 
-.confirm-button:hover {
+.confirm-button:hover, .confirm-button:focus {
   background-color: #00ffdd;
   color: #000;
 }
